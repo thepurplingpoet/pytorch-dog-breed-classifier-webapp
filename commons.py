@@ -27,7 +27,7 @@ def get_model():
                            nn.Dropout(0.5),
                            nn.Linear(512, 133))
     model.classifier = classifier
-    download_file(model_link,'model_transfer.pt')
+    await download_file(model_link,'model_transfer.pt')
     model.load_state_dict(torch.load('model_transfer.pt', map_location=torch.device('cpu')))
     model.eval()
     return model
