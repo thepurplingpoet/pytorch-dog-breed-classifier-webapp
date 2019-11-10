@@ -15,7 +15,7 @@ async def download_file(url, dest):
             with open(dest, 'wb') as f:
                 f.write(data)
 
-def get_model():
+async def get_model():
     model = models.vgg16(pretrained=False)
     for param in model.parameters():
         param.requires_grad = False
