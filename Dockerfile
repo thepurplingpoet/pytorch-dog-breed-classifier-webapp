@@ -7,7 +7,7 @@ COPY requirements.txt .
 
 RUN pip install --upgrade -r requirements.txt
 
-Add . app/
+ADD . app/
 
 RUN python app/app.py
 
